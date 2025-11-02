@@ -1,0 +1,230 @@
+=== OS SIMULATOR - PHASE 2 ===
+Page Size: 1024 bytes
+Physical Memory: 64 frames
+Virtual Memory: 256 pages per process
+
+Command [5]: CREATE 1 10
+Process 1 created with 10 pages
+
+Command [6]: CREATE 2 15
+Process 2 created with 15 pages
+
+Command [7]: CREATE 3 8
+Process 3 created with 8 pages
+
+Command [10]: ACCESS 1 0
+Accessing virtual address 0 of process 1
+TLB Miss: Process 1, Page 0
+PAGE FAULT: Process 1, Page 0
+Allocated frame 0 to page 0 of process 1
+Physical address: 0
+
+Command [11]: ACCESS 1 1024
+Accessing virtual address 1024 of process 1
+TLB Miss: Process 1, Page 1
+PAGE FAULT: Process 1, Page 1
+Allocated frame 1 to page 1 of process 1
+Physical address: 1024
+
+Command [12]: ACCESS 1 2048
+Accessing virtual address 2048 of process 1
+TLB Miss: Process 1, Page 2
+PAGE FAULT: Process 1, Page 2
+Allocated frame 2 to page 2 of process 1
+Physical address: 2048
+
+Command [13]: ACCESS 2 0
+Accessing virtual address 0 of process 2
+TLB Miss: Process 2, Page 0
+PAGE FAULT: Process 2, Page 0
+Allocated frame 3 to page 0 of process 2
+Physical address: 3072
+
+Command [14]: ACCESS 2 5120
+Accessing virtual address 5120 of process 2
+TLB Miss: Process 2, Page 5
+PAGE FAULT: Process 2, Page 5
+Allocated frame 4 to page 5 of process 2
+Physical address: 4096
+
+Command [17]: WRITE 1 512
+Writing to virtual address 512 of process 1
+TLB Miss: Process 1, Page 0
+Physical address: 512
+
+Command [18]: WRITE 2 1024
+Writing to virtual address 1024 of process 2
+TLB Miss: Process 2, Page 1
+PAGE FAULT: Process 2, Page 1
+Allocated frame 5 to page 1 of process 2
+Physical address: 5120
+
+Command [19]: WRITE 3 0
+Writing to virtual address 0 of process 3
+TLB Miss: Process 3, Page 0
+PAGE FAULT: Process 3, Page 0
+Allocated frame 6 to page 0 of process 3
+Physical address: 6144
+
+Command [22]: ACCESS 1 0
+Accessing virtual address 0 of process 1
+TLB Hit: Process 1, Page 0
+Physical address: 0
+
+Command [23]: ACCESS 1 1024
+Accessing virtual address 1024 of process 1
+TLB Miss: Process 1, Page 1
+Physical address: 1024
+
+Command [26]: MEMMAP
+
+=== MEMORY MAP ===
+Process 1 (State: READY)
+  Page Faults: 3
+  Valid Pages: 0->0 1->1 2->2 
+Process 2 (State: READY)
+  Page Faults: 3
+  Valid Pages: 0->3 1->5 5->4 
+Process 3 (State: READY)
+  Page Faults: 1
+  Valid Pages: 0->6 
+==================
+
+Command [29]: ACCESS 1 3072
+Accessing virtual address 3072 of process 1
+TLB Miss: Process 1, Page 3
+PAGE FAULT: Process 1, Page 3
+Allocated frame 7 to page 3 of process 1
+Physical address: 7168
+
+Command [30]: ACCESS 1 4096
+Accessing virtual address 4096 of process 1
+TLB Miss: Process 1, Page 4
+PAGE FAULT: Process 1, Page 4
+Allocated frame 8 to page 4 of process 1
+Physical address: 8192
+
+Command [31]: ACCESS 1 5120
+Accessing virtual address 5120 of process 1
+TLB Miss: Process 1, Page 5
+PAGE FAULT: Process 1, Page 5
+Allocated frame 9 to page 5 of process 1
+Physical address: 9216
+
+Command [32]: ACCESS 1 6144
+Accessing virtual address 6144 of process 1
+TLB Miss: Process 1, Page 6
+PAGE FAULT: Process 1, Page 6
+Allocated frame 10 to page 6 of process 1
+Physical address: 10240
+
+Command [33]: ACCESS 1 7168
+Accessing virtual address 7168 of process 1
+TLB Miss: Process 1, Page 7
+PAGE FAULT: Process 1, Page 7
+Allocated frame 11 to page 7 of process 1
+Physical address: 11264
+
+Command [34]: ACCESS 1 8192
+Accessing virtual address 8192 of process 1
+TLB Miss: Process 1, Page 8
+PAGE FAULT: Process 1, Page 8
+Allocated frame 12 to page 8 of process 1
+Physical address: 12288
+
+Command [37]: STATS
+
+=== SYSTEM STATISTICS ===
+TLB Hits: 1
+TLB Misses: 15
+TLB Hit Rate: 6.25%
+Free Frames: 51/64
+Active Processes: 3
+=========================
+
+Command [40]: WRITE 2 2048
+Writing to virtual address 2048 of process 2
+TLB Miss: Process 2, Page 2
+PAGE FAULT: Process 2, Page 2
+Allocated frame 13 to page 2 of process 2
+Physical address: 13312
+
+Command [41]: WRITE 3 1024
+Writing to virtual address 1024 of process 3
+TLB Miss: Process 3, Page 1
+PAGE FAULT: Process 3, Page 1
+Allocated frame 14 to page 1 of process 3
+Physical address: 14336
+
+Command [44]: TERMINATE 1
+Process 1 terminated. Page faults: 9
+
+Command [47]: MEMMAP
+
+=== MEMORY MAP ===
+Process 2 (State: READY)
+  Page Faults: 4
+  Valid Pages: 0->3 1->5 2->13 5->4 
+Process 3 (State: READY)
+  Page Faults: 2
+  Valid Pages: 0->6 1->14 
+==================
+
+Command [48]: STATS
+
+=== SYSTEM STATISTICS ===
+TLB Hits: 1
+TLB Misses: 17
+TLB Hit Rate: 5.56%
+Free Frames: 58/64
+Active Processes: 2
+=========================
+
+Command [51]: ACCESS 2 3072
+Accessing virtual address 3072 of process 2
+TLB Miss: Process 2, Page 3
+PAGE FAULT: Process 2, Page 3
+Allocated frame 15 to page 3 of process 2
+Physical address: 15360
+
+Command [52]: ACCESS 3 2048
+Accessing virtual address 2048 of process 3
+TLB Miss: Process 3, Page 2
+PAGE FAULT: Process 3, Page 2
+Allocated frame 16 to page 2 of process 3
+Physical address: 16384
+
+Command [55]: TERMINATE 2
+Process 2 terminated. Page faults: 5
+
+Command [56]: TERMINATE 3
+Process 3 terminated. Page faults: 3
+
+Command [59]: STATS
+
+=== SYSTEM STATISTICS ===
+TLB Hits: 1
+TLB Misses: 19
+TLB Hit Rate: 5.00%
+Free Frames: 64/64
+Active Processes: 0
+=========================
+
+Command [60]: MEMMAP
+
+=== MEMORY MAP ===
+==================
+
+
+=== FINAL STATISTICS ===
+
+=== SYSTEM STATISTICS ===
+TLB Hits: 1
+TLB Misses: 19
+TLB Hit Rate: 5.00%
+Free Frames: 64/64
+Active Processes: 0
+=========================
+
+=== MEMORY MAP ===
+==================
